@@ -17,6 +17,9 @@ export default function App() {
             <span className="cta-ring" aria-hidden="true"></span>
           </button>
         )}
+        {!pressed && (
+          <div className="ink" aria-hidden="true">17</div>
+        )}
       </div>
 
       <div className={`reveal ${pressed ? 'fade-in' : 'fade-out'}`} aria-hidden={!pressed} style={{ pointerEvents: pressed ? 'auto' : 'none' }}>

@@ -55,6 +55,18 @@ body {
   place-items: center;
 }
 
+.ink {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(255,255,255,0.01);
+  user-select: text;
+}
+.ink::selection { color: rgba(255,255,255,0.85); background: rgba(124,92,255,0.35); }
+.ink::-moz-selection { color: rgba(255,255,255,0.85); background: rgba(124,92,255,0.35); }
+
 .cta-btn {
   appearance: none;
   border: 0;
