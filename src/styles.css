@@ -1,7 +1,11 @@
 :root {
-  --bg: #000;
+  --bg: #020205;
+  --bg-grad-1: #0b0612;
+  --bg-grad-2: #200915;
+  --bg-grad-3: #09070f;
   --text: #e6ecff;
   --accent: #7c5cff;
+  --accent-2: #ff2d55;
 }
 
 * { box-sizing: border-box; }
@@ -12,7 +16,10 @@ body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
-  background: var(--bg);
+  background:
+    radial-gradient(1000px 600px at 85% -10%, rgba(124,92,255,0.10), transparent 60%),
+    radial-gradient(900px 560px at -20% 110%, rgba(255,45,85,0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg-grad-1) 0%, var(--bg-grad-2) 45%, var(--bg-grad-3) 100%);
 }
 
 .screen {
@@ -21,6 +28,24 @@ body {
   place-items: center;
   position: relative;
   overflow: hidden;
+}
+
+.title-banner {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(230, 236, 255, 0.75);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 8px 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  animation: fade-in 480ms ease forwards;
 }
 
 .center, .reveal {
@@ -39,7 +64,7 @@ body {
   width: clamp(120px, 22vw, 220px);
   height: clamp(120px, 22vw, 220px);
   border-radius: 50%;
-  background: radial-gradient(100% 100% at 50% 35%, #2b224f 0%, #16122d 55%, #0c0a19 100%);
+  background: radial-gradient(100% 100% at 50% 35%, #201a3d 0%, #120e26 55%, #090717 100%);
   color: white;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -48,10 +73,10 @@ body {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   box-shadow:
-    0 30px 60px rgba(0,0,0,0.8),
+    0 30px 60px rgba(0,0,0,0.85),
     0 0 0 1px rgba(255,255,255,0.06),
     0 0 60px rgba(124,92,255,0.28),
-    0 0 120px rgba(0,212,255,0.18);
+    0 0 120px rgba(255,45,85,0.18);
   transform: translateY(0) scale(1);
   transition: transform 160ms ease, filter 220ms ease, opacity 280ms ease, box-shadow 220ms ease;
 }
@@ -60,10 +85,10 @@ body {
   transform: translateY(-2px) scale(1.03);
   filter: brightness(1.08);
   box-shadow:
-    0 36px 80px rgba(0,0,0,0.75),
+    0 36px 80px rgba(0,0,0,0.82),
     0 0 0 1px rgba(255,255,255,0.08),
     0 0 80px rgba(124,92,255,0.45),
-    0 0 160px rgba(0,212,255,0.28);
+    0 0 160px rgba(255,45,85,0.28);
 }
 .cta-btn:active {
   transform: translateY(0) scale(0.97);
@@ -81,7 +106,7 @@ body {
   position: absolute;
   inset: -18px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(124,92,255,0.0), rgba(124,92,255,0.5), rgba(0,212,255,0.4), rgba(124,92,255,0.0));
+  background: conic-gradient(from 0deg, rgba(124,92,255,0.0), rgba(124,92,255,0.5), rgba(255,45,85,0.4), rgba(124,92,255,0.0));
   filter: blur(22px);
   z-index: -1;
   animation: halo 2400ms linear infinite;
@@ -100,11 +125,11 @@ body {
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 0.8;
-  background: linear-gradient(180deg, #ffffff 0%, #bfbfff 35%, #7c5cff 70%, #3b2b8f 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #c9c0ff 30%, #7c5cff 60%, #ff2d55 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 24px 80px rgba(124,92,255,0.2));
+  filter: drop-shadow(0 24px 80px rgba(124,92,255,0.22));
   transform: translateY(10px) scale(0.98);
   animation: pop-in 600ms cubic-bezier(.2,.8,.2,1) forwards 120ms;
 }
@@ -112,7 +137,7 @@ body {
 .caption {
   margin-top: 18px;
   font-size: clamp(16px, 3vw, 28px);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0;
   transform: translateY(8px);

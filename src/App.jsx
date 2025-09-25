@@ -5,6 +5,7 @@ export default function App() {
 
   return (
     <div className="screen">
+      <div className="title-banner">Challenge #1</div>
       <div className={`center ${pressed ? 'fade-out' : 'fade-in'}`} aria-hidden={pressed} style={{ pointerEvents: pressed ? 'none' : 'auto' }}>
         {!pressed && (
           <button
