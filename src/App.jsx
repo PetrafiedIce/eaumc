@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function App() {
   const [pressed, setPressed] = useState(false);
-  const startRef = useRef(Date.now());
   const [nowMs, setNowMs] = useState(Date.now());
 
   useEffect(() => {
@@ -10,7 +9,8 @@ export default function App() {
     return () => clearInterval(id);
   }, []);
 
-  const earned = Math.max(0, ((nowMs - startRef.current) / 3600000) * 10);
+  const GLOBAL_START_MS = Date.parse('2025-09-25T00:00:00Z');
+  const earned = Math.max(0, ((nowMs - GLOBAL_START_MS) / 3600000) * 10);
   const display = `$${earned.toFixed(2)}`;
 
   return (
