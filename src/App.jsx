@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function App() {
   const [pressed, setPressed] = useState(false);
+  const startRef = useRef(Date.now());
+  const [nowMs, setNowMs] = useState(Date.now());
+
+  useEffect(() => {
+    const id = setInterval(() => setNowMs(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const earned = Math.max(0, ((nowMs - startRef.current) / 3600000) * 10);
+  const display = `$${earned.toFixed(2)}`;
 
   return (
     <div className="screen">
       <div className="title-banner">Challenge #1</div>
+      <div className="counter" aria-live="polite">{display}</div>
       <div className={`center ${pressed ? 'fade-out' : 'fade-in'}`} aria-hidden={pressed} style={{ pointerEvents: pressed ? 'none' : 'auto' }}>
         {!pressed && (
           <button

@@ -48,6 +48,22 @@ body {
   animation: fade-in 480ms ease forwards;
 }
 
+.counter {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: rgba(223, 230, 255, 0.9);
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+}
+
 .center, .reveal {
   position: absolute;
   inset: 0;
