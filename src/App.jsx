@@ -10,9 +10,11 @@ export default function App() {
         {!pressed && (
           <button
             className="cta-btn"
+            aria-label="Press"
             onClick={() => setPressed(true)}
           >
-            Press
+            <span className="cta-core" aria-hidden="true"></span>
+            <span className="cta-ring" aria-hidden="true"></span>
           </button>
         )}
       </div>
