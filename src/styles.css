@@ -63,6 +63,7 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.45);
   backdrop-filter: blur(6px);
 }
+.counter-num { font-variant-numeric: tabular-nums; font-weight: 900; }
 
 .center, .reveal {
   position: absolute;
