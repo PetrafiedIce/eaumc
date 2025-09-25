@@ -5,7 +5,7 @@ export default function App() {
 
   return (
     <div className="screen">
-      <div className={`center ${pressed ? 'fade-out' : 'fade-in'}`} aria-hidden={pressed}>
+      <div className={`center ${pressed ? 'fade-out' : 'fade-in'}`} aria-hidden={pressed} style={{ pointerEvents: pressed ? 'none' : 'auto' }}>
         {!pressed && (
           <button
             className="cta-btn"
@@ -16,7 +16,7 @@ export default function App() {
         )}
       </div>
 
-      <div className={`reveal ${pressed ? 'fade-in' : 'fade-out'}`} aria-hidden={!pressed}>
+      <div className={`reveal ${pressed ? 'fade-in' : 'fade-out'}`} aria-hidden={!pressed} style={{ pointerEvents: pressed ? 'auto' : 'none' }}>
         {pressed && (
           <>
             <div className="monogram" aria-label="K">K</div>
